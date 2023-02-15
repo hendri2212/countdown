@@ -4,7 +4,8 @@
 <div class="container-fluid text-center mt-5">
     <h1>Menghitung Hari</h1>
     <h2>UKK Rekayasa Perangkat Lunak</h2>
-    <h3 class="alert alert-danger" role="alert" id="countdown"></h3>
+    <div class="alert alert-danger" role="alert" id="countdown"></div>
+    <p class="small text-body-secondary ">copyright &copy Hendri Arifin</p>
 </div>
 
 <script>
@@ -27,7 +28,7 @@
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Output the countdown in the HTML element with id="countdown"
-    document.getElementById("countdown").innerHTML = "Time remaining: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    document.getElementById("countdown").innerHTML = "Time remaining:<br /><span class='h3'>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s </span>";
 
     // If the countdown is finished, display a message
     if (distance < 0) {

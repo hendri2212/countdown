@@ -3,7 +3,9 @@
 
 <div class="container-fluid text-center mt-5">
     <h1>Menghitung Hari</h1>
-    <h2 class="text-warning">UKK Rekayasa Perangkat Lunak</h2>
+    <h2 class="text-warning pt-2">UAS SMKN 1 KOTABARU</h2>
+    <div class="alert alert-info" role="alert" id="countdownuas"></div>
+    <h2 class="text-warning pt-5">UKK Rekayasa Perangkat Lunak</h2>
     <div class="alert alert-danger" role="alert" id="countdown"></div>
     <p class="small text-body-secondary ">copyright &copy Hendri Arifin</p>
 </div>
@@ -11,6 +13,7 @@
 <script>
     // Set the date and time to count down to
     var countDownDate = new Date("March 12, 2023 23:59:59").getTime();
+    var countDownDateuas = new Date("March 6, 2023 23:59:59").getTime();
 
     // Update the countdown every second
     var x = setInterval(function() {
@@ -20,6 +23,7 @@
 
     // Calculate the time remaining
     var distance = countDownDate - now;
+    var distanceuas = countDownDateuas - now;
 
     // Calculate days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -27,13 +31,20 @@
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+    var daysuas = Math.floor(distanceuas / (1000 * 60 * 60 * 24));
+    var hoursuas = Math.floor((distanceuas % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutesuas = Math.floor((distanceuas % (1000 * 60 * 60)) / (1000 * 60));
+    var secondsuas = Math.floor((distanceuas % (1000 * 60)) / 1000);
+
     // Output the countdown in the HTML element with id="countdown"
     document.getElementById("countdown").innerHTML = "Time remaining:<br /><span class='h3'>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s </span>";
+    document.getElementById("countdownuas").innerHTML = "Time remaining:<br /><span class='h3'>" + daysuas + "d " + hoursuas + "h " + minutesuas + "m " + secondsuas + "s </span>";
 
     // If the countdown is finished, display a message
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("countdown").innerHTML = "EXPIRED";
+        document.getElementById("countdownuas").innerHTML = "EXPIRED";
     }
     }, 1000);
 </script>

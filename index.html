@@ -38,7 +38,12 @@
 
     // Output the countdown in the HTML element with id="countdown"
     document.getElementById("countdown").innerHTML = "Time remaining:<br /><span class='h3'>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s </span>";
-    document.getElementById("countdownuas").innerHTML = "Time remaining:<br /><span class='h3'>" + daysuas + "d " + hoursuas + "h " + minutesuas + "m " + secondsuas + "s </span>";
+    if (daysuas>0) {
+        document.getElementById("countdownuas").innerHTML = "Time remaining:<br /><span class='h3'>" + daysuas + "d " + hoursuas + "h " + minutesuas + "m " + secondsuas + "s </span>";
+    } else {
+        document.getElementById("countdownuas").innerHTML = "<h3>US Telah Tiba</h3>";
+    }
+    console.log(daysuas)
 
     // If the countdown is finished, display a message
     if (distance < 0) {
